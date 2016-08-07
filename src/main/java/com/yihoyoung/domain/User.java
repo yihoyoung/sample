@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -22,6 +23,14 @@ public class User {
     Long userId;
     String email;
     String password;
-    Timestamp createdAt;
-    Timestamp updatedAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    java.util.Calendar createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    java.util.Calendar updatedAt;
+
+    @OneToMany
+    UsersRole usersRole;
+
+    @OneToMany
+    Article article;
 }
