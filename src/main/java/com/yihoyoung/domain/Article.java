@@ -2,11 +2,9 @@ package com.yihoyoung.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -26,6 +24,12 @@ public class Article {
     java.util.Calendar createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     java.util.Calendar updatedAt;
+    @ManyToOne
+    User user;
+    @OneToOne
+    Profile profile;
+    @OneToMany
+    List<Comment> comments;
 
     public Article(){
         UUID uuid = UUID.randomUUID();

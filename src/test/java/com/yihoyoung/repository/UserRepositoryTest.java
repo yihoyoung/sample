@@ -27,7 +27,7 @@ public class UserRepositoryTest {
     @Before
     public void setting(){
         user = new User();
-        user.setEmail("yihoyoung@nate.com");
+        user.setEmail("yihoyoung@nate1.com");
         user.setPassword("password");
         user.setCreatedAt(Calendar.getInstance());
     }

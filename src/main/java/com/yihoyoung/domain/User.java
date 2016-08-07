@@ -7,7 +7,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -28,9 +30,7 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     java.util.Calendar updatedAt;
 
-    @OneToMany
-    UsersRole usersRole;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Fallow> fallows;
 
-    @OneToMany
-    Article article;
 }

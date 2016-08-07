@@ -2,10 +2,7 @@ package com.yihoyoung.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
@@ -30,4 +27,7 @@ public class Comment {
         UUID uuid = UUID.randomUUID();
         this.commentId = "c" + uuid.toString();
     }
+
+    @ManyToOne
+    Article article;
 }
