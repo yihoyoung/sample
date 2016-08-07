@@ -1,8 +1,6 @@
 package com.yihoyoung.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
@@ -13,5 +11,6 @@ public class Fallow {
     long fallowId;
     long userId;
     long falloweeId;
-    Timestamp createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    java.util.Calendar createdAt;
 }

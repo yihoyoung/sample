@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.sql.Timestamp;
 import java.util.UUID;
 
@@ -20,8 +22,10 @@ public class Article {
     String context;
     int views;
     int likes;
-    Timestamp createdAt;
-    Timestamp updatedAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    java.util.Calendar createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    java.util.Calendar updatedAt;
 
     public Article(){
         UUID uuid = UUID.randomUUID();
